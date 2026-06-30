@@ -21,6 +21,29 @@ The repository is organized into experimental notebooks that map directly to the
   - `ablation-4-3-2-4-3-3.ipynb`: Comparison of cropping policies and augmentation strategies.
   - `ablation-4-3-6-campi-comparison.ipynb`: Comparative benchmark against the generative pipeline by Campi et al. (CVPRW 2025).
 
+## Dataset Structure
+The dataset can be found under the `dataset` folder;
+
+```
+- augmented
+- vanilla
+|- vanilla_bbox
+|- vanilla_center_mask
+|- vanilla_largest_bbox
+|- vanilla_sliding_window
+  |- braided
+  |- bubbly
+  |- [...]
+  |- wood
+    |- multi (stands for multi-class)
+    |- random (stands for random-class)
+    |- single (stands for single-class)
+      |- img1.jpg
+      |- [...]
+```
+
+The dataset is publickly available also via kaggle, at this page: "alessandrocogollo/acg4cav-base-extraction"
+
 ## Prerequisites & Optimization
 The codebase is optimized for GPU-accelerated environments (tested on NVIDIA Tesla T4, 16GB VRAM).
 Memory Management: To avoid CUDA fragmentation when running SAM3, we utilize:
